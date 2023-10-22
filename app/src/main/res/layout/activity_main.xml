@@ -25,8 +25,8 @@
             android:layout_marginBottom="8dp"
             android:layout_marginLeft="8dp"
             android:textColor="@color/white"
-            android:hint="Search image..."
-            android:textColorHint="@color/white"
+            android:hint="Search"
+            android:textColorHint="@color/gentlecoral"
             android:gravity="center"
             android:maxLength="16"
             ></EditText>
