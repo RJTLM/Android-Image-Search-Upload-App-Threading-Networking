@@ -1,21 +1,35 @@
 # MAD_Assignment2B
 
-Functionalities:
-• Search Images: You will be able to search images in any web services, e.g.,
-https://pixabay.com or https://www.pexels.com, from your app. When the searching
-happens, you should run the progress bar on the UI. [3 Marks]
-• Display images: You will be able to load 15 images from your search if it returns
-more than 15 images. Otherwise, just load all the images returned from the search.
-Note the search response usually has options for small or thumbnail images. Please
-use that for quick loading. The images are displayed, so they are scrollable (You are
-open to using any widget, such as RecyclerView). The app user should have the
-option to customise the views:
-o Single-column view: Only one picture is placed on a row of the scrollable view.
-[3 marks]
-o Double-column view: Two pictures are placed on a row of the scrollable view.
-[3 marks]
-• Upload image: The user will be able to select an image from the display and will be
-able to upload it to online storage (You can choose anything that works for you). This
-is a research part, and you are given the freedom to use online codes with proper
-references. For example, you can use Google Drive, Dropbox API. My personal
-preference is Firebase: https://firebase.google.com [6 marks]
+MAD_Assignment2B is an Android application that allows users to search for images using the Pixabay API and display them in a RecyclerView. The application also provides functionalities to switch between linear and grid layouts for displaying images and uploading selected images to Firebase Storage.
+
+## Features
+
+1. **Search Images**: Users can search for images using a keyword. The application fetches images from the Pixabay API based on the search keyword and displays them in a RecyclerView.
+2. **Switch Layout**: Users can switch between linear and grid layouts for displaying images with the help of a layout button.
+3. **Select Image**: Users can select an image from the displayed list. The selected image can then be uploaded to Firebase Storage.
+4. **Upload Image**: Users can upload the selected image to Firebase Storage. The application uses Firebase Storage to store the uploaded images.
+
+## Key Components
+
+1. **MainActivity**: The main activity of the application. It handles the UI interactions, search functionality, layout switching, and image uploading.
+   - [View MainActivity.java](https://github.com/RJTLM/MAD_Assignment2B/blob/master/app/src/main/java/com/example/mad_assignment2b/MainActivity.java)
+   
+2. **ImageAdapter**: Adapter class for the RecyclerView. It binds the image data to the RecyclerView items.
+   - [View ImageAdapter.java](https://github.com/RJTLM/MAD_Assignment2B/blob/master/app/src/main/java/com/example/mad_assignment2b/ImageAdapter.java)
+   
+3. **RemoteAPICalls**: Interface for Retrofit API calls. It defines methods for fetching search results from the Pixabay API and for fetching individual images.
+   - [View RemoteAPICalls.java](https://github.com/RJTLM/MAD_Assignment2B/blob/master/app/src/main/java/com/example/mad_assignment2b/RemoteAPICalls.java)
+   
+4. **ResponseModel**: Data model for the search response from the Pixabay API.
+   - [View ResponseModel.java](https://github.com/RJTLM/MAD_Assignment2B/blob/master/app/src/main/java/com/example/mad_assignment2b/ResponseModel.java)
+   
+5. **RecyclerInterface**: Interface for handling item click events in the RecyclerView.
+   - [View RecyclerInterface.java](https://github.com/RJTLM/MAD_Assignment2B/blob/master/app/src/main/java/com/example/mad_assignment2b/RecyclerInterface.java)
+
+## Layouts
+
+1. **activity_main.xml**: The main layout of the application. It contains the search bar, layout switch button, upload button, and the RecyclerView for displaying images.
+   - [View activity_main.xml](https://github.com/RJTLM/MAD_Assignment2B/blob/master/app/src/main/res/layout/activity_main.xml)
+   
+2. **image_layout.xml**: Layout for individual items in the RecyclerView. Each item displays an image.
+   - [View image_layout.xml](https://github.com/RJTLM/MAD_Assignment2B/blob/master/app/src/main/res/layout/image_layout.xml)
