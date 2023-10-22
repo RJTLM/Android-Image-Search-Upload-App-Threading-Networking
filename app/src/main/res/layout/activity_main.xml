@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Root layout using ConstraintLayout -->
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -7,6 +8,7 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
+    <!-- Header layout containing search and button controls -->
     <RelativeLayout
         android:id="@+id/headerLayout"
         android:layout_width="0dp"
@@ -16,6 +18,7 @@
         app:layout_constraintRight_toRightOf="parent"
         android:background="@color/white">
 
+        <!-- EditText for user to input search terms -->
         <EditText
             android:id="@+id/searchText"
             android:layout_width="180dp"
@@ -31,6 +34,7 @@
             android:maxLength="16"
             ></EditText>
 
+        <!-- Button to change the layout of the RecyclerView -->
         <LinearLayout
             android:id="@+id/changeLayout"
             android:layout_width="50dp"
@@ -50,6 +54,7 @@
                 ></ImageButton>
         </LinearLayout>
 
+        <!-- Button to upload the selected image -->
         <LinearLayout
             android:id="@+id/uploadLayout"
             android:layout_width="50dp"
@@ -69,6 +74,7 @@
             </ImageButton>
         </LinearLayout>
 
+        <!-- Button to initiate the image search -->
         <LinearLayout
             android:id="@+id/searchLayout"
             android:layout_width="50dp"
@@ -90,6 +96,7 @@
         </LinearLayout>
     </RelativeLayout>
 
+    <!-- RecyclerView to display the images -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/imageRecycler"
         android:layout_width="wrap_content"
@@ -99,6 +106,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/headerLayout"></androidx.recyclerview.widget.RecyclerView>
+
+    <!-- ProgressBar to indicate loading or processing -->
     <ProgressBar
         android:id="@+id/progressBarId"
         style="?android:attr/progressBarStyle"
