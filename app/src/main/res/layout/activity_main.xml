@@ -32,25 +32,6 @@
             ></EditText>
 
         <LinearLayout
-            android:id="@+id/searchLayout"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:layout_toLeftOf="@id/changeLayout"
-            android:background="@drawable/rounded_square">
-            <ImageButton
-                android:id="@+id/searchButton"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
-                android:background="@drawable/search"
-                android:scaleType="center"
-                android:layout_gravity="center"
-                android:layout_marginLeft="9dp"
-                ></ImageButton>
-        </LinearLayout>
-        <LinearLayout
             android:id="@+id/changeLayout"
             android:layout_width="50dp"
             android:layout_height="50dp"
@@ -68,6 +49,7 @@
                 android:background="@drawable/menu"
                 ></ImageButton>
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/uploadLayout"
             android:layout_width="50dp"
@@ -76,15 +58,35 @@
             android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/rounded_square"
-            android:layout_toLeftOf="@id/searchLayout">
+            android:layout_toLeftOf="@id/changeLayout">
             <ImageButton
                 android:id="@+id/uploadButton"
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_gravity="center"
                 android:background="@drawable/upload"
-                android:layout_marginLeft="9dp"
-                ></ImageButton>
+                android:layout_marginLeft="9dp">
+            </ImageButton>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/searchLayout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_toLeftOf="@id/uploadLayout"
+            android:background="@drawable/rounded_square">
+            <ImageButton
+                android:id="@+id/searchButton"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:background="@drawable/search"
+                android:scaleType="center"
+                android:layout_gravity="center"
+                android:layout_marginLeft="9dp">
+            </ImageButton>
         </LinearLayout>
     </RelativeLayout>
 
