@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "986986881349",
-    "project_id": "imagesearcher-bac75",
-    "storage_bucket": "imagesearcher-bac75.appspot.com"
+    "project_number": "223632561008",
+    "project_id": "madassignment2b-f2355",
+    "storage_bucket": "madassignment2b-f2355.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:986986881349:android:959e8516a5d77d12b45e2c",
+        "mobilesdk_app_id": "1:223632561008:android:d68446d7ab174ab1a175b5",
         "android_client_info": {
           "package_name": "com.example.mad_assignment2b"
         }
