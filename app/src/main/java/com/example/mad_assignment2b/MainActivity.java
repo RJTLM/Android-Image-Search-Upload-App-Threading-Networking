@@ -49,8 +49,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerInterface
     FirebaseStorage storage;
     StorageReference storageReference;
 
-    List<Bitmap> selectedImages = new ArrayList<>();
-    // Bitmap selectedImage;
+    ArrayList<Bitmap> selectedImages = new ArrayList<>();
     int uploadCounter = 0;
     String API_KEY = "40091430-7072d2859219a393a14bee3a5";
 
@@ -108,10 +107,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerInterface
         uploadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!selectedImages.isEmpty()) {
+                if(!selectedImages.isEmpty()) {
                     storage = FirebaseStorage.getInstance();
                     storageReference = storage.getReference("Images/");
-                    for (Bitmap image : selectedImages) {
+                    for(Bitmap image : selectedImages) {
                         StorageReference imageRef = storageReference.child("image" + uploadCounter + ".jpg");
                         uploadCounter++;
                         UploadTask uploadTask = imageRef.putBytes(convertBitmap(image));
@@ -123,28 +122,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerInterface
                 }
             }
         });
-
-        /*uploadButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if(selectedImage != null)
-                {
-                    storage = FirebaseStorage.getInstance();
-                    storageReference = storage.getReference("Images/");
-                    StorageReference imageRef = storageReference.child("image" + uploadCounter + ".jpg");
-                    uploadCounter++;
-                    UploadTask uploadTask = imageRef.putBytes(convertBitmap(selectedImage));
-                    selectedImage = null;
-                    Toast.makeText(getBaseContext(), "Image uploaded.", Toast.LENGTH_LONG).show();
-
-                }
-                else
-                {
-                    Toast.makeText(getBaseContext(), "No image selected.", Toast.LENGTH_LONG).show();
-                }
-            }
-        });*/
-
     }
 
     private void doSearch(String searchKey) {
@@ -166,7 +143,6 @@ public class MainActivity extends AppCompatActivity implements RecyclerInterface
                                 Toast.makeText(this, "Search complete, loading images.", Toast.LENGTH_LONG).show();
                                 progressBar.setVisibility(View.VISIBLE);
                                 Thread.sleep(3000);
-                                selectedImage = null;
                                 if(result.getHits().size() > 15)
                                 {
                                     for(int i = 0; i < 15; i++)
@@ -226,21 +202,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerInterface
 
     @Override
     public void onItemClick(int position) {
-        Bitmap clickedImage = imagesList.get(position);
-        if (selectedImages.contains(clickedImage)) {
-            selectedImages.remove(clickedImage);
-            Toast.makeText(getBaseContext(), "Image deselected.", Toast.LENGTH_LONG).show();
-        } else {
-            selectedImages.add(clickedImage);
-            Toast.makeText(getBaseContext(), "Image selected.", Toast.LENGTH_LONG).show();
-        }
+        selectedImages.add(imagesList.get(position));
+        Toast.makeText(getBaseContext(), "Image added to selection.", Toast.LENGTH_LONG).show();
     }
-    /*
-    @Override
-    public void onItemClick(int position) {
-        selectedImage = imagesList.get(position);
-        Toast.makeText(getBaseContext(), "Image selected.", Toast.LENGTH_LONG).show();
-    }*/
+
     public byte[] convertBitmap(Bitmap bitmap)
     {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
